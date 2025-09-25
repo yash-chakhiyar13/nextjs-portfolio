@@ -55,8 +55,45 @@
 
 
 //v5
+// import '../styles/globals.css'
+// import Header from '../components/Header'
+// import { useEffect } from 'react'
+// import { motion } from 'framer-motion'
+// import Lenis from '@studio-freight/lenis'
+
+// function MyApp({ Component, pageProps }) {
+//   useEffect(() => {
+//     let lenis = new Lenis({ duration: 1.2, smooth: true })
+//     function raf(time) {
+//       lenis.raf(time)
+//       requestAnimationFrame(raf)
+//     }
+//     requestAnimationFrame(raf)
+//     return () => lenis.destroy()
+//   }, [])
+
+//   return (
+//     <>
+//       <Header />
+//       {/* Ensure the page content is pushed below the fixed header to avoid being hidden */}
+//       <motion.div
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         transition={{ duration: 0.35 }}
+//         style={{ paddingTop: 'var(--header-height)' }}
+//       >
+//         <Component {...pageProps} />
+//       </motion.div>
+//     </>
+//   )
+// }
+// export default MyApp
+
+
+// v6
 import '../styles/globals.css'
 import Header from '../components/Header'
+import Head from 'next/head'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Lenis from '@studio-freight/lenis'
@@ -74,8 +111,14 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        {/* <link rel="icon" sizes='196x196' href="/straw-hat.png" /> */}
+        <link rel="icon" type="image/png" sizes="192x192" href="/straw-hat.png" />
+        {/* <link rel="apple-touch-icon" sizes='196x196' href="/straw-hat.png" /> */}
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/straw-hat.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Header />
-      {/* Ensure the page content is pushed below the fixed header to avoid being hidden */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -87,4 +130,5 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
+
 export default MyApp

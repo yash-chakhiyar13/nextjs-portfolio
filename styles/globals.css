@@ -96,3 +96,13 @@ body {
 .text-accent {
   color: #06b6d4;
 }
+
+/* Contact page card hover effects */
+.contact-card {
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
